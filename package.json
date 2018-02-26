@@ -1,6 +1,6 @@
 {
   "name": "todomvc-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TodoMVC implementation built with React",
   "author": "Felix Gnass <fgnass@cellular.de>",
   "repository": "cellular/todomvc-react",
