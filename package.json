@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "./dist/index.html",
   "bin": {
-    "todomvc-react": "./bin/todomvc.js"
+    "todomvc-react": "./bin/todomvc-react.js"
   },
   "scripts": {
     "start": "cs start",
