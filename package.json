@@ -1,0 +1,32 @@
+{
+  "name": "todomvc-react",
+  "version": "1.0.0",
+  "description": "TodoMVC implementation built with React",
+  "author": "Felix Gnass <fgnass@cellular.de>",
+  "repository": "cellular/todomvc-react",
+  "license": "MIT",
+  "main": "./dist/index.html",
+  "bin": {
+    "todomvc-react": "./bin/todomvc.js"
+  },
+  "scripts": {
+    "start": "cs start",
+    "build": "cs build",
+    "serve": "cs serve",
+    "lint": "cs lint",
+    "test": "cs test",
+    "precommit": "cs precommit",
+    "postmerge": "cs postmerge"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "todomvc-app-css": "^2.1.0",
+    "todomvc-common": "^1.0.4"
+  },
+  "devDependencies": {
+    "cellular-scripts": "1.5.4"
+  }
+}
