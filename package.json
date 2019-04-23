@@ -19,15 +19,18 @@
     "postmerge": "cs postmerge"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "serve": "^6.5.0",
-    "todomvc-app-css": "^2.1.0",
-    "todomvc-common": "^1.0.4"
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "serve": "^11.0.0",
+    "todomvc-app-css": "^2.2.0",
+    "todomvc-common": "^1.0.5"
   },
   "devDependencies": {
-    "cellular-scripts": "1.5.4"
+    "cellular-scripts": "^2.0.0-rc.1"
+  },
+  "cellular-scripts": {
+    "assetNamePattern": "todomvc"
   }
 }
