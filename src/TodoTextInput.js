@@ -6,48 +6,81 @@ export default class TodoTextInput extends Component {
   static propTypes = {
     onSave: PropTypes.func.isRequired,
     text: PropTypes.string,
+    priority: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     editing: PropTypes.bool,
     newTodo: PropTypes.bool,
   };
 
-  state = {
-    text: this.props.text || '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: this.props.text || '',
+      priority: this.props.priority || '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
   handleSubmit = e => {
-    const text = e.target.value.trim();
-    if (e.which === 13) {
-      this.props.onSave(text);
-      if (this.props.newTodo) {
-        this.setState({ text: '' });
-      }
+    e.preventDefault();
+    const { text, priority } = this.state;
+    this.props.onSave(text, priority);
+    if (this.props.newTodo) {
+      this.setState({ text: '', priority: '' });
     }
   };
 
-  handleChange = e => this.setState({ text: e.target.value });
-
-  handleBlur = e => {
-    if (!this.props.newTodo) {
-      this.props.onSave(e.target.value);
-    }
-  };
+  handleChange(field) {
+    return e => this.setState({ [field]: e.target.value });
+  }
 
   render() {
     return (
-      <input
-        className={classnames({
-          edit: this.props.editing,
-          'new-todo': this.props.newTodo,
-        })}
-        type="text"
-        placeholder={this.props.placeholder}
-        autoFocus="true"
-        value={this.state.text}
-        onBlur={this.handleBlur}
-        onChange={this.handleChange}
-        onKeyDown={this.handleSubmit}
-      />
+      <form onSubmit={this.handleSubmit}>
+        <input
+          className={classnames({
+            edit: this.props.editing,
+            'new-todo': this.props.newTodo,
+          })}
+          type="text"
+          placeholder={this.props.placeholder}
+          autoFocus={true}
+          value={this.state.text}
+          onBlur={this.handleBlur}
+          onChange={this.handleChange('text')}
+        />
+        <div className="form-bottom">
+          <div className="radio-btns">
+            <input
+              type="radio"
+              value="High"
+              name="priority"
+              onChange={this.handleChange('priority')}
+              checked={this.state.priority == 'High'}
+            />{' '}
+            High
+            <input
+              type="radio"
+              value="Medium"
+              name="priority"
+              onChange={this.handleChange('priority')}
+              checked={this.state.priority == 'Medium'}
+            />{' '}
+            Medium
+            <input
+              type="radio"
+              value="Low"
+              name="priority"
+              onChange={this.handleChange('priority')}
+              checked={this.state.priority == 'Low'}
+            />{' '}
+            Low
+          </div>
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
     );
   }
 }

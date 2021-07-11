@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import TodoTextInput from './TodoTextInput';
 
 const Header = ({ addTodo }) => {
-  const handleSave = text => {
+  const handleSave = (text, priority) => {
     if (text.length !== 0) {
-      addTodo(text);
+      addTodo(text, priority);
     }
   };
 

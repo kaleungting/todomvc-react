@@ -4,11 +4,16 @@
 
 The main purpose of this repository is to provide a well-known sample application to test E2E or process management tools.
 
-To serve the production build:
+To run:
 
 ```sh
-npx todomvc-react
+npm start
 ```
+
+```sh
+localhost:3000
+```
+
 
 # License
 
