@@ -13,7 +13,15 @@ npm start
 
 Then open up your browser and run it on localhost:3000
 
-Features
+Added Features:
+Search Bar - type in your favorite to dos, and the unwanted ones will magically disappear (well, not magically)...
+Priority Sort - whether you like the low hanging fruits or the high ones, this feature has got you covered!
+
+Future Improvements:
+Use of localstorage or a backend database to store todos.
+React Hooks
+Updated dependencies (the ones from the original repo are a bit old)
+
 
 # License
 
