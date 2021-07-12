@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import MainSection from './MainSection';
-import SearchBox from './SearchBox.jsx';
 import './styles.css';
 
 class App extends Component {
@@ -9,13 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       todos: [],
-      searchField: '',
     };
   }
-
-  handleChange = e => {
-    this.setState({ searchField: e.target.value });
-  };
 
   addTodo = (text, priority) => {
     const todos = [
@@ -76,19 +70,12 @@ class App extends Component {
   };
 
   render() {
-    const { todos, searchField } = this.state;
-    const filteredtodos = todos.filter(todo =>
-      todo.text.toLowerCase().includes(searchField.toLowerCase())
-    );
+    const { todos } = this.state;
 
     return (
       <div>
         <Header addTodo={this.actions.addTodo} />
-        <SearchBox
-          placeholder="search to dos"
-          handleChange={this.handleChange}
-        />
-        <MainSection todos={filteredtodos} actions={this.actions} />
+        <MainSection todos={todos} actions={this.actions} />
         <div className="creator">by Ken T.</div>
       </div>
     );
