@@ -1,19 +1,19 @@
 ## TodoMVC • React
 
-[TodoMVC](http://todomvc.com/) implementation built with [React](https://reactjs.org/), [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/).
+This repository was based off of Felix Gnass's React Implementation of the [TodoMVC](http://todomvc.com/). The link to the original repository can be found [here](https://github.com/cellular/todomvc-react).
 
-The main purpose of this repository is to provide a well-known sample application to test E2E or process management tools.
+The repository to his implementation can be found here and it is built on React, [React](https://reactjs.org/), [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/).
 
-To run:
+Running the application is simple:
 
 ```sh
+npm install
 npm start
 ```
 
-```sh
-localhost:3000
-```
+Then open up your browser and run it on localhost:3000
 
+Features
 
 # License
 
