@@ -6,7 +6,7 @@ export default class TodoTextInput extends Component {
   static propTypes = {
     onSave: PropTypes.func.isRequired,
     text: PropTypes.string,
-    priority: PropTypes.string.isRequired,
+    priority: PropTypes.string,
     placeholder: PropTypes.string,
     editing: PropTypes.bool,
     newTodo: PropTypes.bool,
